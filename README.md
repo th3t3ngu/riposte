@@ -37,3 +37,4 @@ Once everything is done, all IP-Adresses with open HTTP-ports will be saved to a
 
 ## Disclaimer
 Don't do anything illegal wis this, obviously
+My native language is German - if any German variables still appear in the code, I apologize; I tried to translate everything.
