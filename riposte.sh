@@ -2,7 +2,6 @@
 
 AUTHLOG="/var/log/auth.log"
 EXCLUDE_COUNTRIES=("US" "United States" "CA" "Canada" "TR" "Turkey" "DE" "Germany" "Unknown") # Countries that are sorted out when using --analyze
-OUTFILE="http_found.txt"
 
 show_help() {
     echo "Usage: riposte.sh [OPTION]"
@@ -75,7 +74,6 @@ case "$1" in
             echo "$IP" >> ips.tmp
         fi
     done
-
     bash check_http.sh
         ;;
     --help|-h)
