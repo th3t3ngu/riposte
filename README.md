@@ -5,8 +5,7 @@ If you're running a server and have fail2ban enabled (which you should), your `/
 ## Dependencies
 `geoiplookup`, 
 `nmap`, 
-`grep`,  
-nothing fancy (yet)
+`grep`, nothing fancy (yet)
 
 ## Usage
 	Usage: riposte.sh [OPTION]
@@ -37,7 +36,8 @@ Make sure that the user with whom you are running this script can read your `/va
 
 
 `--analyze` filters the IPs and scans all IP addresses for open HTTP ports using nmap. Why? Because many of the attacking IPs belong to servers that have themselves been victims of attackers. An open HTTP port usually means a website – and that often offers the possibility of contacting the server administrator and informing them about what their machine is doing - You know, if you're willing to go to the trouble. It's certainly a good deed.
-Nmap scanning isn't a crime, but since I don't have all the local laws of every country memorized, the code offers the option to blacklist countries using `EXCLUDE_COUNTRIES=()` right at the top of `riposte.sh`. The HTTP scanner will take this into account and won't scan IP addresses that, according to `geoiplookup`, originate from such countries.
+
+Nmap scanning isn't a crime, but since I don't have all the local laws of every country memorized, the code offers the option to blacklist countries from which you do not want to scan IPs using `EXCLUDE_COUNTRIES=()` right at the top of `riposte.sh`. The HTTP scanner will take this into account and won't scan IP addresses that, according to `geoiplookup`, originate from such countries.
 Once everything is done, all IP-Adresses with open HTTP-ports will be saved to a file called `http_found.txt`
 
 ## todo
@@ -45,6 +45,6 @@ Once everything is done, all IP-Adresses with open HTTP-ports will be saved to a
 - Webcrawler which attempts to find and evaluate contact email addresses hosted on the websites in order to potentially automate the admin notification
 
 ## Disclaimer
-Don't do anything illegal wis this, obviously.
+Don't do anything illegal with this, obviously.
 
 My native language is German - if any German variables still appear in the code, I apologize; I tried to translate everything.
