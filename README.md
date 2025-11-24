@@ -36,5 +36,6 @@ Once everything is done, all IP-Adresses with open HTTP-ports will be saved to a
 - Webcrawler which attempts to find and evaluate contact email addresses hosted on the websites in order to potentially automate the admin notification
 
 ## Disclaimer
-Don't do anything illegal wis this, obviously
+Don't do anything illegal wis this, obviously.
+
 My native language is German - if any German variables still appear in the code, I apologize; I tried to translate everything.
