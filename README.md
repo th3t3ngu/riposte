@@ -6,7 +6,7 @@ If you're running a server and have fail2ban enabled (which you should), your `/
 `geoiplookup`, 
 `nmap`, 
 `grep`,  
- - nothing fancy (yet)
+nothing fancy (yet)
 
 ## Usage
 	Usage: riposte.sh [OPTION]
@@ -17,10 +17,12 @@ If you're running a server and have fail2ban enabled (which you should), your `/
 	  --analyze      Executes a specified NMAP search pattern and writes a report from the results.
 	  --help         Show this help
 
+Make sure that the user with whom you are running this script can read your `/var/log/auth.log`.
+
 `--show ` reads your auth.log and creates a simple ranking of where most attacks on your server originate:
 
 	Top countries of blocked connections:
-	8 × Singapore
+	28 × Singapore
 	28 × China
 	13 × United States
 	7 × Korea
@@ -28,10 +30,14 @@ If you're running a server and have fail2ban enabled (which you should), your `/
 	7 × Germany
 	5 × United Kingdom
 	5 × Indonesia
+	4 × United Arab Emirates
+	4 × Brazil
+	3 × Vietnam
 
 
-`--analyze` filters the IPs and scans all IP addresses for open HTTP ports using nmap. Why? Because many of the attacking IPs belong to servers that have themselves been victims of attackers. An open HTTP port usually means a website – and that often offers the possibility of contacting the server administrator and informing them about what their machine is doing.
-Nmap scanning isn't a crime, but since I don't have all the local laws of every country memorized, the code offers the option to blacklist countries using `EXCLUDE_COUNTRIES=()`. The HTTP scanner will take this into account and won't scan IP addresses that, according to `geoiplookup`, originate from such countries.
+
+`--analyze` filters the IPs and scans all IP addresses for open HTTP ports using nmap. Why? Because many of the attacking IPs belong to servers that have themselves been victims of attackers. An open HTTP port usually means a website – and that often offers the possibility of contacting the server administrator and informing them about what their machine is doing - You know, if you're willing to go to the trouble. It's certainly a good deed.
+Nmap scanning isn't a crime, but since I don't have all the local laws of every country memorized, the code offers the option to blacklist countries using `EXCLUDE_COUNTRIES=()` right at the top of `riposte.sh`. The HTTP scanner will take this into account and won't scan IP addresses that, according to `geoiplookup`, originate from such countries.
 Once everything is done, all IP-Adresses with open HTTP-ports will be saved to a file called `http_found.txt`
 
 ## todo
