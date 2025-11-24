@@ -38,7 +38,7 @@ Make sure that the user with whom you are running this script can read your `/va
 `--analyze` filters the IPs and scans all IP addresses for open HTTP ports using nmap. Why? Because many of the attacking IPs belong to servers that have themselves been victims of attackers. An open HTTP port usually means a website – and that often offers the possibility of contacting the server administrator and informing them about what their machine is doing - You know, if you're willing to go to the trouble. It's certainly a good deed.
 
 Nmap scanning isn't a crime, but since I don't have all the local laws of every country memorized, the code offers the option to blacklist countries from which you do not want to scan IPs using `EXCLUDE_COUNTRIES=()` right at the top of `riposte.sh`. The HTTP scanner will take this into account and won't scan IP addresses that, according to `geoiplookup`, originate from such countries.
-Once everything is done, all IP-Adresses with open HTTP-ports will be saved to a file called `http_found.txt`
+Once everything is done, all IP-adresses with open HTTP-ports will be saved to a file called `http_found.txt`
 
 ## todo
 - Speeding up the scanning process - currently looking into `parallel` and `masscan`
@@ -46,5 +46,7 @@ Once everything is done, all IP-Adresses with open HTTP-ports will be saved to a
 
 ## Disclaimer
 Don't do anything illegal with this, obviously.
+
+`http_scanner.sh` will write the sorted IPs to a temporary file called `ips.tmp`, and will delete this file when the report is written (hopefully)
 
 My native language is German - if any German variables still appear in the code, I apologize; I tried to translate everything.
