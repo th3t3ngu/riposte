@@ -14,7 +14,7 @@ nothing fancy (yet)
 
 	Options:
 	  --show         List unique IPs, sorted by frequency and country of origin
-	  --analyze      Executes a specified NMAP search pattern and writes a report from the results.
+	  --analyze      Scans the IPs for open HTTP-ports and writes a report from the results.
 	  --help         Show this help
 
 Make sure that the user with whom you are running this script can read your `/var/log/auth.log`.
