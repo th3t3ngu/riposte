@@ -9,7 +9,7 @@ show_help() {
     echo
     echo -e "\033[4mOptions:\033[0m"
     echo "  --show         List unique IPs, sorted by frequency and country of origin" 
-    echo "  --analyze      Executes a specified NMAP search pattern and writes a report from the results."
+    echo "  --analyze      Scans the IPs for open HTTP-ports and writes a report from the results."
     echo "  --help         Show this help"
     echo
 }
