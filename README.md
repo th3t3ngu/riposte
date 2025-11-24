@@ -3,10 +3,10 @@
 If you're running a server and have fail2ban enabled (which you should), your `/var/log/auth.log` file will sooner or later fill up with messages about someone trying to compromise your SSH port. Riposte analyzes these messages, ranks the countries most of these attackers originate from, and offers the ability to scan incoming connections for open HTTP ports using nmap. Why? More on that later.
 
 ## Dependencies
-`geoiplookup` 
-`nmap` 
-`grep` 
-nothing fancy (yet)
+`geoiplookup`, 
+`nmap`, 
+`grep`,  
+ - nothing fancy (yet)
 
 ## Usage
 	Usage: riposte.sh [OPTION]
